@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="3.0" xmlns="https://jakarta.ee/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence                                  https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+    <persistence-unit name="SoapPU" transaction-type="JTA">
+        <!-- DataSource JNDI configurat a GlassFish apuntant a PostgreSQL/testdbd -->
+        <jta-data-source>jdbc/testdbd</jta-data-source>
+        <!-- Clàsses d'entitat -->
+        <class>com.mycompany.soap.model.ModelVehicles</class>
+        <class>com.mycompany.soap.model.Vehicles</class>
+        <class>com.mycompany.soap.model.MarcaVehicle</class>
+        <properties>
+            <property name="eclipselink.target-database" value="PostgreSQL"/>
+            <property name="jakarta.persistence.schema-generation.database.action" value="create"/>
+            <property name="eclipselink.logging.level.sql" value="FINE"/>
+            <property name="eclipselink.logging.parameters" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>

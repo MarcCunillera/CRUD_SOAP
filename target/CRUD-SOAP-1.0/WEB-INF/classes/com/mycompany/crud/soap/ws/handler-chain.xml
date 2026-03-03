@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handler-chains xmlns="https://jakarta.ee/xml/ns/jakartaee">
+    <handler-chain>
+        <!-- 1r: valida credencials -->
+        <handler>
+            <handler-name>SecurityHandler</handler-name>
+            <handler-class>com.mycompany.crud.soap.ws.SecurityHandler</handler-class>
+        </handler>
+        <!-- 2n: registra el missatge (només si passa la seguretat) -->
+        <handler>
+            <handler-name>LogHandler</handler-name>
+            <handler-class>com.mycompany.crud.soap.ws.SoapLogHandler</handler-class>
+        </handler>
+    </handler-chain>
+</handler-chains>
